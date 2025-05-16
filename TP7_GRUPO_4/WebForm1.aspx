@@ -104,8 +104,8 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>Búsqueda por nombre de sucursal:
-                        <asp:TextBox ID="searchTxtBox" runat="server" style="margin-left: 201px" Width="327px"></asp:TextBox>
-                        <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" style="margin-left: 25px" Text="Buscar" />
+                
+                       
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
