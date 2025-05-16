@@ -63,8 +63,13 @@ namespace TP7_GRUPO_4
             lvSucursales.DataBind();
         }
 
-
-
-
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            string sucToSearch = SearchTextBox.Text.Trim();
+            var sucursales = manager.BuscarPorNombre(sucToSearch);
+            SearchTextBox.Text = "";
+            lvSucursales.DataSource = sucursales;
+            lvSucursales.DataBind();
+        }
     }
 }
