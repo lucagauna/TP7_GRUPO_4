@@ -13,6 +13,9 @@
         .auto-style2 {
             width: 386px;
         }
+        .auto-style3 {
+            height: 23px;
+        }
         </style>
 </head>
 <body>
@@ -100,7 +103,10 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>Búsqueda por nombre de sucursal:
+                        <asp:TextBox ID="searchTxtBox" runat="server" style="margin-left: 201px" Width="327px"></asp:TextBox>
+                        <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" style="margin-left: 25px" Text="Buscar" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -334,28 +340,28 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style3"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
