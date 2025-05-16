@@ -80,11 +80,22 @@
     <Content Include="Imagenes\7.jpg" />
     <Content Include="Imagenes\8.jpg" />
     <Content Include="Imagenes\9.jpg" />
+    <Content Include="MostrarSucursalesSeleccionadas.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBaseManager.cs" />
+    <Compile Include="MostrarSucursalesSeleccionadas.aspx.cs">
+      <DependentUpon>MostrarSucursalesSeleccionadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarSucursalesSeleccionadas.aspx.designer.cs">
+      <DependentUpon>MostrarSucursalesSeleccionadas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sucursal.cs" />
+    <Compile Include="SucursalManager.cs" />
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
