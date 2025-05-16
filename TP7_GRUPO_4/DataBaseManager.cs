@@ -46,14 +46,14 @@ namespace TP7_GRUPO_4
         public int EjecutarProcedimientoAlmacenado(SqlCommand cmdSQL, string nameProcedure)
         {
             int FilasCambiadas;
-            SqlConnection conect = RecibirConexion();
+            SqlConnection connect = RecibirConexion();
             SqlCommand cmdPA = new SqlCommand();
             cmdPA = cmdSQL;
-            cmdPA.Connection = conect;
+            cmdPA.Connection = connect;
             cmdPA.CommandType = CommandType.StoredProcedure;    /// TIPO DE COMANDO (PROCEDIMIENTO ALMACENADO -- "PROCEDURE")
             cmdPA.CommandText = nameProcedure;                  /// NOMBRE DEL PROCEDIMIENTO ALMACENADO
             FilasCambiadas = cmdPA.ExecuteNonQuery();          /// EJECUTAR PROCEDIMIENTO ALMACENADO
-            conect.Close();
+            connect.Close();
             return FilasCambiadas;
         }
     }

@@ -125,7 +125,7 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                         <asp:DataList ID="dlProvincias" runat="server" DataKeyField="Id_Provincia" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="Gray">
                             <ItemTemplate>
-                                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' Text='<%# Eval("DescripcionProvincia") %>' />
+                                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' Text='<%# Eval("DescripcionProvincia") %>' OnCommand="btnProvincias_Command" />
                                 <br />
 <br />
                             </ItemTemplate>
@@ -135,8 +135,8 @@
                     <td>&nbsp;</td>
                     <td>
                         
-<div style="width: fit-content; margin: 0 auto;">
-                           <asp:ListView ID="ListView1" runat="server" DataSourceID="BddSucursales" GroupItemCount="3" style="margin: 0 auto">
+                                <div style="width: fit-content; margin: 0 auto;">
+                           <asp:ListView ID="lvSucursales" runat="server" DataSourceID="BddSucursales" GroupItemCount="3" style="margin: 0 auto">
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C; color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -260,7 +260,12 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:SqlDataSource ID="BddSucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [URL_Imagen_Sucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="BddSucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT NombreSucursal, URL_Imagen_Sucursal, DescripcionSucursal FROM Sucursal WHERE (@IdProvincia = -1 OR Id_ProvinciaSucursal = @IdProvincia)"
+>
+                            <SelectParameters>
+                                <asp:Parameter Name="IdProvincia"  Type="Int32" DefaultValue="-1" ConvertEmptyStringToNull="true"/>
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

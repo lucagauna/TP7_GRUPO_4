@@ -9,10 +9,10 @@ namespace TP7_GRUPO_4
 {
     public class SucursalManager
     {
-
-        public static DataTable ObtenerSucursalesPorProvincia(string provincia)
+        DataBaseManager db = new DataBaseManager();
+        public  DataTable ObtenerSucursalesPorProvincia(string provincia)
         {
-            DataBaseManager db = new DataBaseManager();
+            
             string consulta = "SELECT NombreSucursal, URL_Imagen_Sucursal, DescripcionSucursal FROM Sucursal WHERE Provincia = @provincia";
 
             using (SqlConnection conn = db.RecibirConexion())
@@ -27,7 +27,7 @@ namespace TP7_GRUPO_4
             }
         }
 
-        public static DataTable ObtenerTodasLasSucursales()
+        public  DataTable ObtenerTodasLasSucursales()
         {
             DataBaseManager db = new DataBaseManager();
             string consulta = "SELECT NombreSucursal, URL_Imagen_Sucursal, DescripcionSucursal, Id_ProvinciaSucursal FROM Sucursal";

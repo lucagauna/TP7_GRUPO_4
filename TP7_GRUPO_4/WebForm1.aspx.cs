@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,34 @@ namespace TP7_GRUPO_4
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack) {
+                BddSucursales.SelectParameters["IdProvincia"].DefaultValue = "-1";
+                lvSucursales.DataBind();
+               
+            }
+
+        }
+
+
+
+
+
+
+
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
+        {
+            
+            int idProvincia;
+            if (int.TryParse(e.CommandArgument.ToString(), out idProvincia))
+            {
+                BddSucursales.SelectParameters["IdProvincia"].DefaultValue = idProvincia.ToString();
+            }
+            else
+            {
+                
+                BddSucursales.SelectParameters["IdProvincia"].DefaultValue = "-1";
+            }
+            lvSucursales.DataBind();
         }
     }
 }
