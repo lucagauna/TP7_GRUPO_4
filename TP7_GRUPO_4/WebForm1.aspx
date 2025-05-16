@@ -142,7 +142,7 @@
                     <td>
                         
                                 <div style="width: fit-content; margin: 0 auto;">
-                           <asp:ListView ID="lvSucursales" runat="server" DataSourceID="BddSucursales" GroupItemCount="3" style="margin: 0 auto">
+                           <asp:ListView ID="lvSucursales" runat="server" GroupItemCount="3" style="margin: 0 auto" OnPagePropertiesChanging="lvSucursales_PagePropertiesChanging">
                             <EditItemTemplate>
                                 <td runat="server" style="background-color:#008A8C; color: #FFFFFF;">NombreSucursal:
                                     <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
@@ -266,7 +266,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:SqlDataSource ID="BddSucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT NombreSucursal, URL_Imagen_Sucursal, DescripcionSucursal FROM Sucursal WHERE (@IdProvincia = -1 OR Id_ProvinciaSucursal = @IdProvincia)"
+                        <asp:SqlDataSource ID="BddSucursales" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT NombreSucursal, URL_Imagen_Sucursal, DescripcionSucursal FROM Sucursal WHERE (@IdProvincia = -1 OR Id_ProvinciaSucursal = @IdProvincia) "
 >
                             <SelectParameters>
                                 <asp:Parameter Name="IdProvincia"  Type="Int32" DefaultValue="-1" ConvertEmptyStringToNull="true"/>

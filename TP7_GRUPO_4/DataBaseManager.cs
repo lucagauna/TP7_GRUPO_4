@@ -43,6 +43,18 @@ namespace TP7_GRUPO_4
                 return null;
             }
         }
+        public SqlDataReader ExecuteReader(string query, params SqlParameter[] parametros)
+        {
+            SqlConnection conn = new SqlConnection(LinkConexion);
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            if (parametros != null)
+                cmd.Parameters.AddRange(parametros);
+
+            conn.Open();
+         
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        }
         public int EjecutarProcedimientoAlmacenado(SqlCommand cmdSQL, string nameProcedure)
         {
             int FilasCambiadas;
