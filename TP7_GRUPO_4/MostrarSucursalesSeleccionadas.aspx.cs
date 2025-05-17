@@ -11,7 +11,15 @@ namespace TP7_GRUPO_4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                var seleccionadas = (List<Sucursal>)Session["SucursalesSeleccionadas"];
+                if (seleccionadas != null)
+                {
+                    gvSeleccionados.DataSource = seleccionadas;
+                    gvSeleccionados.DataBind();
+                }
+            }
         }
     }
 }

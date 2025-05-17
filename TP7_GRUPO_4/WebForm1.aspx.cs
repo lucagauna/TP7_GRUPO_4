@@ -14,22 +14,14 @@ namespace TP7_GRUPO_4
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-           
                 if (!IsPostBack)
                 {
-                
-                List<Sucursal> sucursales = manager.ListarSucursales();
-                lvSucursales.DataSource = sucursales;
-                lvSucursales.DataBind();
-           
-            }
 
-            
-
+                    List<Sucursal> sucursales = manager.ListarSucursales();
+                    lvSucursales.DataSource = sucursales;
+                    lvSucursales.DataBind();
+                }
         }
-
-
 
         protected void btnProvincias_Command(object sender, CommandEventArgs e)
         {
@@ -57,7 +49,7 @@ namespace TP7_GRUPO_4
         {
             DataPager pager = (DataPager)lvSucursales.FindControl("DataPager1");
             pager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-          
+
             var sucursales = manager.ListarSucursales();
             lvSucursales.DataSource = sucursales;
             lvSucursales.DataBind();
@@ -70,6 +62,31 @@ namespace TP7_GRUPO_4
             SearchTextBox.Text = "";
             lvSucursales.DataSource = sucursales;
             lvSucursales.DataBind();
+        }
+
+        protected void btnSelected_Command(object sender, CommandEventArgs e)
+        {
+            int IDSuc = Convert.ToInt32(e.CommandArgument);
+            var sucursales = manager.BuscarPorID(IDSuc);
+            if (sucursales != null)
+            {
+                List<Sucursal> seleccionadas = Session["SucursalesSeleccionadas"] as List<Sucursal> ?? new List<Sucursal>();
+                bool existe = false;
+                foreach (var item in seleccionadas)
+                {
+                    if (item.IdSucursal == IDSuc)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+            if (!existe )
+                {
+                    seleccionadas.Add(sucursales);
+                    Session["SucursalesSeleccionadas"] = seleccionadas;
+                }
+            }
+
         }
     }
 }

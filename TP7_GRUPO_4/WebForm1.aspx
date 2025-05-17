@@ -79,7 +79,9 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lbl1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listado de sucursales"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -204,7 +206,7 @@
                                     <br />
                                     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Button ID="btnSelected" runat="server" Text="Seleccionar" />
+                                    <asp:Button ID="btnSelected" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("IdSucursal") %>' OnCommand="btnSelected_Command" />
                                     <br />
                                         </div>
                                 </td>

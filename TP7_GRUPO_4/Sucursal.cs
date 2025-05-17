@@ -14,6 +14,7 @@ namespace TP7_GRUPO_4
         public string Provincia { get; set; }
 
         public int idProvinciaSucursal { get; set; }
+        public int IdSucursal { get; set; }
 
     }
 }
