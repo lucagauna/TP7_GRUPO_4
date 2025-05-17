@@ -11,7 +11,7 @@ namespace TP7_GRUPO_4
         public List<Sucursal> ListarSucursales()
         {
             var sucursales = new List<Sucursal>();
-            string query = @"SELECT S.NombreSucursal, S.URL_Imagen_Sucursal, S.DescripcionSucursal,
+            string query = @"SELECT S.Id_Sucursal, S.NombreSucursal, S.URL_Imagen_Sucursal, S.DescripcionSucursal,
                             P.DescripcionProvincia AS Provincia, S.Id_ProvinciaSucursal
                      FROM Sucursal S
                      INNER JOIN Provincia P ON S.Id_ProvinciaSucursal = P.Id_Provincia";
@@ -22,6 +22,7 @@ namespace TP7_GRUPO_4
                 {
                     sucursales.Add(new Sucursal
                     {
+                        IdSucursal = Convert.ToInt32(reader["Id_Sucursal"]),
                         NombreSucursal = reader["NombreSucursal"].ToString(),
                         URL_Imagen_Sucursal = reader["URL_Imagen_Sucursal"].ToString(),
                         DescripcionSucursal = reader["DescripcionSucursal"].ToString(),
