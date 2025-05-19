@@ -10,11 +10,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/WebForm1.aspx">Listado de Sucursales</asp:HyperLink>
+            <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/Ejercicio/WebForm1.aspx">Listado de Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlMostrarSucursalesSeleccionadas" runat="server" NavigateUrl="~/MostrarSucursalesSeleccionadas.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
         </div>
-        <asp:GridView ID="gvSeleccionados" runat="server">
+        <asp:GridView ID="gvSeleccionados" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="IdSucursal" HeaderText="ID_SUCURSAL"/>
+                <asp:BoundField DataField="NombreSucursal" HeaderText="NOMBRE"/>
+                <asp:BoundField DataField="DescripcionSucursal" HeaderText="DESCRIPCION"/>
+            </Columns>
         </asp:GridView>
     </form>
 </body>
