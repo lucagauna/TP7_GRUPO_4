@@ -18,8 +18,24 @@ namespace TP7_GRUPO_4
                 {
                     gvSeleccionados.DataSource = seleccionadas;
                     gvSeleccionados.DataBind();
+
+                    btnLimpiarSeleccion.Visible = true; // Mostrar el botón si hay datos
+                }
+                else
+                {
+                    btnLimpiarSeleccion.Visible = false; // Ocultar si no hay datos
                 }
             }
+        }
+
+        protected void btnLimpiarSeleccion_Click(object sender, EventArgs e)
+        {
+            Session["SucursalesSeleccionadas"] = null;
+            gvSeleccionados.DataSource = null;
+            gvSeleccionados.DataBind();
+
+            btnLimpiarSeleccion.Visible = false;
+            lblMensaje.Text = "Sucursales seleccionadas eliminadas.";
         }
     }
 }

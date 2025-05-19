@@ -83,5 +83,10 @@ namespace TP7_GRUPO_4
             }
 
         }
+
+        protected void btnProvincias_Click(object sender, EventArgs e)
+        {
+            SearchTextBox.Text = string.Empty;
+        }
     }
 }

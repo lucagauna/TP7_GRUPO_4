@@ -12,7 +12,8 @@
         <div>
             <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/Ejercicio/WebForm1.aspx">Listado de Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="hlMostrarSucursalesSeleccionadas" runat="server" NavigateUrl="~/MostrarSucursalesSeleccionadas.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+            <asp:HyperLink ID="hlMostrarSucursalesSeleccionadas" runat="server" NavigateUrl="~/Ejercicio/MostrarSucursalesSeleccionadas.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+            <br />
         </div>
         <asp:GridView ID="gvSeleccionados" runat="server" AutoGenerateColumns="false">
             <Columns>
@@ -21,6 +22,10 @@
                 <asp:BoundField DataField="DescripcionSucursal" HeaderText="DESCRIPCION"/>
             </Columns>
         </asp:GridView>
+        <br />
+        <asp:Button ID="btnLimpiarSeleccion" runat="server" OnClick="btnLimpiarSeleccion_Click" Text="Limpiar Seleccion" Visible="False" />
+        <br />
+        <asp:Label ID="lblMensaje" runat="server" ForeColor="#33CC33"></asp:Label>
     </form>
 </body>
 </html>

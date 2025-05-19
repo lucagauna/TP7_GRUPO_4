@@ -137,7 +137,7 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                         <asp:DataList ID="dlProvincias" runat="server" DataKeyField="Id_Provincia" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="Gray">
                             <ItemTemplate>
-                                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' Text='<%# Eval("DescripcionProvincia") %>' OnCommand="btnProvincias_Command" />
+                                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' Text='<%# Eval("DescripcionProvincia") %>' OnCommand="btnProvincias_Command" OnClick="btnProvincias_Click" />
                                 <br />
 <br />
                             </ItemTemplate>
