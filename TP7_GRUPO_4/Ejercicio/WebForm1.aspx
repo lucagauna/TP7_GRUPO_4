@@ -16,6 +16,9 @@
         .auto-style3 {
             height: 23px;
         }
+        .auto-style4 {
+            height: 42px;
+        }
         </style>
 </head>
 <body>
@@ -75,30 +78,30 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4">
                         <asp:Label ID="lbl1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Listado de sucursales"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -108,8 +111,12 @@
                     <td>Búsqueda por nombre de sucursal:
                 
                        
-                        <asp:TextBox ID="SearchTextBox" runat="server" style="margin-left: 195px" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="SearchTextBox" runat="server" style="margin-left: 195px" Width="200px" ></asp:TextBox>
                         <asp:Button ID="SearchButton" runat="server" OnClick="SearchButton_Click" style="margin-left: 35px" Text="Buscar" />
+                
+                       
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="lblErrorToSearch" runat="server" AssociatedControlID="SearchTextBox" Font-Bold="True" Font-Italic="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False" ForeColor="Red" Visible="False"></asp:Label>
                 
                        
                     </td>

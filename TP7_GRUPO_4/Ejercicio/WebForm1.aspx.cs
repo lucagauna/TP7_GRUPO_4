@@ -54,9 +54,31 @@ namespace TP7_GRUPO_4
         {
             string sucToSearch = SearchTextBox.Text.Trim();
             var sucursales = manager.BuscarPorNombre(sucToSearch);
-            SearchTextBox.Text = "";
             lvSucursales.DataSource = sucursales;
             lvSucursales.DataBind();
+
+
+            if (SearchTextBox.Text.Trim() == "" && sucursales.Count > 0)
+            {
+                lblErrorToSearch.Visible = true;
+                lblErrorToSearch.Text = "Ingrese el nombre de la sucursal que desea buscar";
+                SearchTextBox.Text = "";
+            }
+            else if (sucursales.Count <= 0)
+            {
+              lblErrorToSearch.Visible = true;
+              lblErrorToSearch.Text = "No se encontraron resultados";
+              lvSucursales.DataSource = sucursales;
+              lvSucursales.DataBind();
+              SearchTextBox.Text = "";
+            }
+            else if (sucursales.Count > 0)
+            {
+                lblErrorToSearch.Visible = false;
+                lblErrorToSearch.Text.ToString().Equals("");
+                SearchTextBox.Text = "";
+            }
+
         }
 
         protected void btnSelected_Command(object sender, CommandEventArgs e)
