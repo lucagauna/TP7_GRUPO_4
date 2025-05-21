@@ -54,9 +54,7 @@ namespace TP7_GRUPO_4
         {
             string sucToSearch = SearchTextBox.Text.Trim();
             var sucursales = manager.BuscarPorNombre(sucToSearch);
-            lvSucursales.DataSource = sucursales;
-            lvSucursales.DataBind();
-
+            Debug.Print("sucursales: " + sucursales.Count.ToString());
 
             if (SearchTextBox.Text.Trim() == "" && sucursales.Count > 0)
             {
@@ -68,9 +66,7 @@ namespace TP7_GRUPO_4
             {
               lblErrorToSearch.Visible = true;
               lblErrorToSearch.Text = "No se encontraron resultados";
-              lvSucursales.DataSource = sucursales;
-              lvSucursales.DataBind();
-              SearchTextBox.Text = "";
+                SearchTextBox.Text = "";
             }
             else if (sucursales.Count > 0)
             {
@@ -78,7 +74,8 @@ namespace TP7_GRUPO_4
                 lblErrorToSearch.Text.ToString().Equals("");
                 SearchTextBox.Text = "";
             }
-
+            lvSucursales.DataSource = sucursales;
+            lvSucursales.DataBind();
         }
 
         protected void btnSelected_Command(object sender, CommandEventArgs e)
