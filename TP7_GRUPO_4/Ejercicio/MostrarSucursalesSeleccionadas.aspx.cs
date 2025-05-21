@@ -37,5 +37,10 @@ namespace TP7_GRUPO_4
             btnLimpiarSeleccion.Visible = false;
             lblMensaje.Text = "Sucursales seleccionadas eliminadas.";
         }
+
+        protected void gvSeleccionados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
