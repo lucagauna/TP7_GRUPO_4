@@ -38,6 +38,8 @@ namespace TP7_GRUPO_4
                 lvSucursales.DataBind();
             }
 
+            Button btn = (Button)sender;
+            lblFilter.Text = btn.Text;
         }
 
         protected void lvSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
@@ -61,18 +63,21 @@ namespace TP7_GRUPO_4
                 lblErrorToSearch.Visible = true;
                 lblErrorToSearch.Text = "Ingrese el nombre de la sucursal que desea buscar";
                 SearchTextBox.Text = "";
+                lblFilter.Text = "Ninguno";
             }
             else if (sucursales.Count <= 0)
             {
               lblErrorToSearch.Visible = true;
               lblErrorToSearch.Text = "No se encontraron resultados";
                 SearchTextBox.Text = "";
+                lblFilter.Text = "Nombre sucursal";
             }
             else if (sucursales.Count > 0)
             {
                 lblErrorToSearch.Visible = false;
                 lblErrorToSearch.Text.ToString().Equals("");
                 SearchTextBox.Text = "";
+                lblFilter.Text = "Nombre sucursal";
             }
             lvSucursales.DataSource = sucursales;
             lvSucursales.DataBind();
